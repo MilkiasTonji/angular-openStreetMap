@@ -1,0 +1,9 @@
+Tasks of the service in angular
+    1. Fetching data from the server.
+    2. Validating the user inputs.
+    3. Logging directly to the console.
+
+
+
+Injecting providers vs Injecting services
+

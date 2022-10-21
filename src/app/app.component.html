@@ -1,0 +1,41 @@
+<div class="container">
+   <form class="form"  [formGroup]="loginForm" (submit)="onSubmit()">
+    <mat-form-field class="mat-field" appearance="fill">
+      <mat-label>userName</mat-label>
+      <input matInput formControlName="userName" class="matInput">
+      <!-- <div class="error" *ngIf="!loginForm.controls['userName'].value && loginForm.controls['userName'].dirty">* user name is required</div> -->
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="_password" type="password">
+    </mat-form-field>
+    <div class="form-group-content">
+      <mat-radio-group
+        class="form-group-item-2 product-form__input--type-2"
+        formControlName="unit"
+      >
+        <label class="product-form__label">Unit: </label>
+        <mat-radio-button class="product-form__radio" value="piece">Per Unit </mat-radio-button>
+        <mat-radio-button class="product-form__radio" value="person"
+          >Per Person
+        </mat-radio-button>
+        <mat-radio-button class="product-form__radio" value="pound"
+          >Per Pound
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <button mat-raised-button color="accent" [disabled]="!loginForm.valid">Submit</button>
+   </form>
+   <div class="map-container">
+    <div
+      style="height: 90%; margin-top: 100px;"
+      leaflet
+      [leafletOptions]="options"
+    >
+    </div>
+  </div>
+</div>
